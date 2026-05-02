@@ -1,0 +1,289 @@
+:root{
+    --text-color: #1a1c20;
+    --link-color: #4a76ee;
+    --background-color: #eeeff1 ;
+}
+ .{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html {
+    scroll-behavior: smooth;  /*to ensure whenever we are clicking onthe nav link or on the pad=ge it will scroll smoothly*/ 
+}
+body{
+font-family:'popins',sans-serif;
+background-color: var(--background-color);
+max-width: 1400px;/*this will help when zoom out and zoom in the page will not strech out or get invisible*/
+margin: 0 auto;
+}
+a{
+    color:var(--link-color);
+    text-decoration: none;
+}
+
+/* nav bar  */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /*  here why alignment is padding and margin ke upar */
+    padding:0 50px;
+    height: 80px;
+}
+nav .left a { /*here why just a little space between (nav.left a) is effecting so much */
+    color:var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+}
+nav .right a{
+    color:var(--text-color);
+    margin: 0 10px;
+}
+nav .right a:last-child{ /*thee color in the background of the email link box*/
+    color:var(--background-color);
+    background-color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+nav .right a span{
+    margin-left:5px;
+}
+/* section 1 main section  */
+.introduction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* adjesting the space around the text */
+    padding: 0 50px;
+    margin: 50px 0;
+    margin-bottom:100px;
+    /* adding gap betweeb th text of the head section and the image oof mine  */
+    gap: 40px;
+}
+.introduction .text{
+    flex:5;
+}
+/* changing the font sizeof the heading and the paragraph text */
+.introduction .text h2{
+   font-size: 45px;
+}
+/* adding space between the links and the pareagraphs above it  */
+.introduction .text .links{
+    margin-top: 25px;
+}
+/*styling the individual links inside the text class    */
+.introduction .text .links a{
+    display: inline-block; /*if we are not doing it the icon and the text will get seperate while changing device*/
+    padding: 5px 10px;
+    border: 2px solid var(--link-color);
+    border-radius: 5px ;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: .1s; /* it will give the effect of transition  to the links inside the introduction section*/
+}
+.introduction .text .links a:hover{ /* psudo class hover*/
+    color: var(--text-color);
+    border: 2px var(--text-color);
+}
+/*targetting the image element */
+
+.introduction .headshot{
+    flex: 2;
+    /*to align the picture with the nav bar we have to set display and justify the 
+    content to the right side*/
+    display: flex;
+    justify-content:right;
+}
+.introduction .headshot img{
+    width: 300px;
+    border-radius: 50%;
+} 
+/* section 2: skills */
+.skill-section{
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.skill-section h2{
+    text-align: center;
+    font-size: 35px;
+}
+.skill-section text{
+    text-align: center;
+    margin-bottom:20px;
+}
+.skill-section .cells{/*  for all the logo images to align them in a straignt line 
+    and the wrap is used for responsiveness when the size of the screen will get reduced the 
+    span  text with the images will get wrapped around*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.skill-section .cells .cell{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width:200PX;
+    padding:10px 20px;
+    margin: 10px;
+    border: 1.5px solid #d3d3d3 ;
+    border-radius:5px; 
+}
+.skill-section .cells .cell img{
+    width: 30px; 
+    height: 30px;
+    background-color: var(--background-color);
+
+    object-fit: contain;
+    border-radius: 2px;
+}
+.skill-section .cells .cell span{
+    font-size: 18px;
+}
+/* section 3: testimony  */
+.testimony{
+ padding: 0 50px;
+ margin-bottom: 100px;   
+}
+.testimony h2{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.testimony .group{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+/* in the code below flex 2 and flex 8 they are both competeing for their own space 
+total of both of hem is 10 then the 8 will get the 80% of the space right and the flex 2
+will get the 20 % space right (just a way to justify their width on the parents width )*/
+.testimony .group .person-details{
+    text-align: center;
+    flex: 2;
+}
+.testimony .group .text{
+    flex: 8;
+}
+.testimony .group .person-details img{
+    width: 200px;
+    
+    aspect-ratio: 1/1;/*The aspect-ratio property in CSS lets you control the proportional relationship between an element’s width and height*/
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+}
+.testimony .group .person-details p:last-child{
+    font-weight: normal;
+}
+/* Section 4: Contact */
+.contact{
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.contact h2{
+    font-size: 35px;
+}
+.contact .group{
+    display: flex;
+    gap: 50px;
+}
+.contact .group .text{
+    flex: 3;
+    margin-top: 20px;
+}
+.contact .group form{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+.contact .group form input,
+.contact .group form textarea{
+    font-family: 'poppons',sans-serif;
+    border: 2px solid var(--link-color);
+    background-color: transparent;
+    margin: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    resize: none;
+}
+.contact .group form button{
+    font-size: 16px;
+    font-family: 'poppins',sans-serif;
+    color: #fff;
+    background-color: var(--link-color);
+    border: none;
+    height:50px;
+    cursor: pointer;
+    transition: .1s;
+}
+.contact .group form button:hover{
+    filter: brightness(.9);/* brightness of the butoon will get dim by 10 % */
+} 
+/* @media helps in creating a responsive design of the page 
+based on the conditon what is the size of the sevice and other */
+@media(max-width:850px){
+    /* section 1:introduction */
+    .introduction .text h2{
+      font-size: 35px;
+    }  
+}
+@media(max-width : 740px){
+    .introduction {
+        flex-direction: column-reverse;/* to make the image on top and the text below it */ 
+    }
+    .introduction .headshot img{
+      width: 300px;
+
+    }
+    /* section 3 :testmony */
+    .testimony {
+        text-align: center;
+    }
+    .testimony .group{
+      flex-direction: column;   
+    }
+    /*Section 4: contact  */
+    .contact .group{
+        flex-direction: column;
+    }
+}
+@media(max-width:600px){
+    /* NAVBAR */
+    nav{
+        padding: 0 22px;
+    }
+    nav .right a{
+        font-size:22px
+    }
+     nav .right a:last-child{
+        color:var(--text-color);
+        background-color : temperature;
+        padding: 0;
+        margin-right: 10px;
+     }
+     nav .right a span{
+        display: none;
+     }
+     /* section 1:introduction */
+     .introduction{
+        padding: 0 22px;
+     }
+     .introduction .text h2{
+        font-size: 28px;
+     }
+/* section :skills */
+.skill-section .cells .cell span{
+    font-size: 16px;
+}
+/*  section 3:testimony*/
+.testimony{
+    padding: 0 20px;
+}
+/* section 4 : contact */
+.contact{
+    padding: 0 20px;
+}
+}
